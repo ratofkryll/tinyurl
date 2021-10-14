@@ -6,6 +6,8 @@
 * cd into `tinyurl`
 * `bundle install`
 * `yarn install`
+* If your local database requires login, uncomment "username" and "password" in database.yml and update with your credentials
+  * It is best to create an .env file to store these credentials
 * `rails db:create`
 * `rails db:migrate`
 * `rails db:seed`

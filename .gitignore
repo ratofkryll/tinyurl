@@ -34,3 +34,7 @@
 /yarn-error.log
 yarn-debug.log*
 .yarn-integrity
+
+# Ignore .env in any folder - we don't want any credentials accidentally being added to version control
+# For this exercise, I probably won't require an .env file - this is here in case the reviewer or someone else needs DB credentials to log in to their local DB
+**/.env

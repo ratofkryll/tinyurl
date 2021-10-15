@@ -3,5 +3,6 @@ Rails.application.routes.draw do
 
   root to: 'urls#new'
 
-  resources :urls, only: [:new, :show, :create]
+  resources :urls, only: [:index, :new, :show, :create]
+  get '/:id', to: "urls#show"
 end

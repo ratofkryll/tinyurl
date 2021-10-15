@@ -1,0 +1,10 @@
+%h1 All URLs
+
+%table
+  %tr
+    %th Original URL
+    %th Short URL
+  - @urls.each do |url|
+    %tr
+      %td= url.long_url
+      %td= url.short_url

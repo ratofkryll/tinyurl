@@ -7,4 +7,5 @@
   - @urls.each do |url|
     %tr
       %td= url.long_url
-      %td= url.short_url
+      %td
+        = link_to url.to_param

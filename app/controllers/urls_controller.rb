@@ -4,8 +4,12 @@ class UrlsController < ApplicationController
   end
 
   def show
-    @url = Url.find(params[:id])
+    @url = Url.find(id_param)
     redirect_to @url.long_url
+  end
+
+  def info
+    @url = Url.find(id_param)
   end
 
   def new
@@ -25,6 +29,11 @@ class UrlsController < ApplicationController
   end
 
   private
+
+  def id_param
+    # Convert the base 36 string back to a base 10 integer so that ActiveRecord can find the record by its ID
+    params[:id]&.to_i(36)
+  end
 
   def url_params
     params.require(:url).permit(:long_url)

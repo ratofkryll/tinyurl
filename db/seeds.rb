@@ -6,5 +6,5 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 (1..1000).each do |i|
-  Url.create!(long_url: "https://www.yahoo.com?t=#{SecureRandom.hex(32)}", short_url: SecureRandom.hex(39) )
+  Url.create!(long_url: "https://www.yahoo.com?t=#{SecureRandom.hex(32)}" )
 end

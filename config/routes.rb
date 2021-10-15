@@ -3,6 +3,10 @@ Rails.application.routes.draw do
 
   root to: 'urls#new'
 
-  resources :urls, only: [:index, :new, :show, :create]
+  resources :urls, only: [:index, :new, :show, :create] do
+    member do
+      get :info
+    end
+  end
   get '/:id', to: "urls#show"
 end

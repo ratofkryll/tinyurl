@@ -7,5 +7,5 @@
   - @urls.each do |url|
     %tr
       %td= url.long_url
-      %td= link_to short_url(url), short_url(url)
-      %td= link_to "Info", info_path(url)
+      %td= link_to url_url(url), url_url(url)
+      %td= link_to "Info", [:info, url]

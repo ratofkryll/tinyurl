@@ -1,7 +1,13 @@
 require "test_helper"
 
 class UrlTest < ActiveSupport::TestCase
-  # test "the truth" do
-  #   assert true
-  # end
+  test "it accepts valid URLs" do
+    url = urls(:valid)
+    assert url.valid?
+  end
+
+  test "it rejects invalid URLs" do
+    url = urls(:invalid)
+    assert !url.valid?
+  end
 end

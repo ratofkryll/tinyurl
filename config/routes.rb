@@ -8,5 +8,5 @@ Rails.application.routes.draw do
       get :info
     end
   end
-  get '/:id', to: "urls#show"
+  get '/:id', to: "urls#show", as: :short
 end

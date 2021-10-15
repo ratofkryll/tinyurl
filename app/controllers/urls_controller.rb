@@ -5,6 +5,8 @@ class UrlsController < ApplicationController
 
   def show
     @url = Url.find(id_param)
+    # Create a visit on click, adding the request's IP address
+    @url.visits.create!(ip_address: request.remote_ip)
     redirect_to @url.long_url
   end
 

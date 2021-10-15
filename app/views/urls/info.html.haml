@@ -1,2 +1,14 @@
-%h1= @url.long_url
-%h2= link_to 
+%h1= link_to short_url(@url), @url
+%h2
+  Original URL:
+  = @url.long_url
+%h2 Visits
+%table
+  %tr
+    %th IP Address
+    %th Date Visited
+  - @url.visits.each do |visit|
+    %tr
+      %td= visit.ip_address
+      -# We can use created_at to get some information about when and how often a user clicks the link 
+      %td= visit.created_at

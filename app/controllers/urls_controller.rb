@@ -22,11 +22,11 @@ class UrlsController < ApplicationController
     # Using find_or_create_by here upserts the record - creates or updates it, depending on whether or not it already exists. Create_with tells Rails what to use to create a new record if one does not exist.
     @url = Url.create_with(url_params).find_or_create_by(long_url: url_params[:long_url])
 
-    if @url.save!
+    if @url.save
       redirect_to [:info, @url]
     else
       flash[:error] = @url.errors.full_messages
-      redirect_to new_url_path
+      render :new
     end
   end
 

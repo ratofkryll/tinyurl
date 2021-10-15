@@ -1,3 +1,6 @@
+- if @url.errors.any?
+  - @url.errors.full_messages.each do |message|
+    %h3= message
 = form_with model: @url do |f|
   = f.text_field :long_url
   = f.submit "Shorten URL"
